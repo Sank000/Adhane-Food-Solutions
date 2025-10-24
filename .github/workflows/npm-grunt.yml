@@ -1,4 +1,4 @@
-name: NodeJS with Grunt
+name: NodeJS with Grunt and Auto Deploy to Hostinger
 
 on:
   push:
@@ -16,12 +16,25 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Node.js ${{ matrix.node-version }}
+
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Build
+    - name: Install dependencies and build
       run: |
         npm install
         grunt
+        npm run build   # Build your React app (creates 'build' folder)
+
+    - name: Deploy to Hostinger via FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.4.0
+      with:
+        server: ftp.adhanefoods.com        # Your Hostinger FTP server
+        username: ${{ info@adhanefoods.com }}
+        password: ${{ Sachin@4%&@432 }}
+        local-dir: ./build                # React build folder
+        server-dir: /public_html/         # Hostinger folder where your site is hosted
+        dry-run: false                    # Set to false to actually upload
+
