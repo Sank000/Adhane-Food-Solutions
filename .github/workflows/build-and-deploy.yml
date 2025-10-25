@@ -1,0 +1,30 @@
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install and build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy built files to 'production' branch
+        run: |
+          cd build
+          git init
+          git config user.name "GitHub Actions"
+          git config user.email "bhusaresanket08@gmail.com"
+          git add .
+          git commit -m "Auto build and deploy"
+          git push --force git@github.com:Sank000/Adhane-Food-Solutions.git master:production
