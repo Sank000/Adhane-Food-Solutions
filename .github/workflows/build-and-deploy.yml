@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Node.js (older version for older React)
+      # 2️⃣ Setup Node.js (for React)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -27,6 +27,8 @@ jobs:
 
       # 4️⃣ Deploy built files to production branch
       - name: Push build to production branch
+        env:
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         run: |
           cd build
           git init
@@ -35,4 +37,4 @@ jobs:
           git add .
           git commit -m "Auto deploy static site"
           git branch -M production
-          git push --force "https://x-access-token:github_pat_...@github.com/Sank000/Adhane-Food-Solutionos.git"
+          git push --force "https://x-access-token:${PERSONAL_TOKEN}@github.com/Sank000/Adhane-Food-Solutionos.git"
