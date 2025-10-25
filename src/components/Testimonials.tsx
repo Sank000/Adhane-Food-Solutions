@@ -35,7 +35,7 @@ export default function Testimonials() {
     setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="bg-[#a4ffaa] py-16 lg:py-24">
+    <section className="bg-white py-16 lg:py-24">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -49,10 +49,10 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="rounded-lg border border-[#f6fbfd] bg-white p-8 text-center transition-all hover:shadow-lg"
+              className="rounded-lg border border-[#e0e0e0] bg-gray-100 p-8 text-center transition-all duration-300 hover:shadow-[0_10px_25px_#00F510]"
             >
               <img
-                src={t.img} // ✅ fixed: removed .src
+                src={t.img}
                 alt={t.name}
                 className="mx-auto mb-4 h-20 w-20 rounded-full object-cover"
               />
@@ -83,9 +83,10 @@ export default function Testimonials() {
                 key={i}
                 className="min-w-full flex-shrink-0 flex justify-center"
               >
-                <div className="w-[90%] max-w-[320px] rounded-2xl border border-[#f6fbfd] bg-white p-6 text-center shadow-md transition-all">
+                <div className="w-[90%] max-w-[320px] rounded-2xl border border-[#e0e0e0] bg-gray-100 p-6 text-center transition-all duration-300 hover:shadow-[0_10px_25px_#00F510]"
+                >
                   <img
-                    src={t.img} // ✅ fixed: removed .src
+                    src={t.img}
                     alt={t.name}
                     className="mx-auto mb-4 h-20 w-20 rounded-full object-cover"
                   />

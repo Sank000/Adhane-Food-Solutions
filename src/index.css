@@ -1,21 +1,23 @@
 /* WhatsApp Button Styling */
 .whatsapp-button {
-    /* Position fixed से यह स्क्रॉल करने पर भी एक ही जगह चिपका रहेगा */
+    
     position: fixed;
-    bottom: 20px; /* नीचे से 20 pixel ऊपर */
-    right: 20px;  /* दाएँ (Right) से 20 pixel अंदर */
-    z-index: 1000; /* यह इसे दूसरे elements के ऊपर दिखाता है */
+    bottom: 20px; 
+    right: 20px;  
+    z-index: 1000; 
 }
 
 .whatsapp-button a img {
-    /* Logo का size और golai (optional) */
-    width: 60px; /* अपने हिसाब से साइज़ बदल सकते हो */
+    
+    width: 60px; 
     height: 60px;
-    border-radius: 50%; /* इसे गोल (round) दिखाने के लिए */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* थोड़ा shadow दे सकते हो */
+    border-radius: 50%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
-/*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
+
+
+
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
     *, :before, :after, ::backdrop {

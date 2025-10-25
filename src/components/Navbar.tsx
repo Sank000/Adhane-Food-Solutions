@@ -39,12 +39,7 @@ export default function Navbar() {
             >
               Our Service
             </a>
-            <a
-              href="#team"
-              className="text-[#4d4d4d] transition-colors hover:text-[#00f510]"
-            >
-              Team
-            </a>
+          
             <a
               href="#contact"
               className="text-[#4d4d4d] transition-colors hover:text-[#00f510]"

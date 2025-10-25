@@ -3,23 +3,23 @@ import { Check } from "lucide-react";
 export default function WhyChooseUs() {
   const features = [
     {
-      title: "Expertise across the food value chain",
-      description: "Decades of combined experience in food manufacturing, quality assurance, and regulatory compliance",
+      title: "Proven Track Record",
+      description: "20+ successful industrial projects and 200+ commercial food products, backed by 20+ years of experience.",
       color: "green",
     },
     {
-      title: "Tailored strategies for every business",
-      description: "Customized solutions that fit your unique needs, whether you're a startup or an established enterprise",
+      title: "Regulatory & Technical Mastery",
+      description: "Deep understanding of food regulations and modern technologies.",
       color: "green",
     },
     {
-      title: "Innovation aligned with global trends",
-      description: "Stay ahead with insights on emerging technologies, consumer preferences, and sustainability practices",
+      title: "End-to-End Expertise",
+      description: "Complete solutions — from concept to commercial launch.",
       color: "green",
     },
     {
-      title: "Trusted partner for compliance & growth",
-      description: "Proven track record of helping businesses achieve certifications, scale operations, and enter new markets",
+      title: "Trusted by Top Brands",
+      description: "Partnered with leading Indian and international food companies.",
       color: "green",
     },
     

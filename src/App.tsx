@@ -6,7 +6,6 @@ import Services from "./components/Services";
 import WhyChooseUs from "./components/WhyChooseUs";
 import VisionMission from "./components/VisionMission";
 import Industries from "./components/Industries";
-import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
 import ContactUs from "./components/ContactUs";
 import CTASection from "./components/CTASection";
@@ -24,7 +23,6 @@ export default function App() {
         <WhyChooseUs />
         <VisionMission />
         <Industries />
-        <Team />
         <Testimonials />
         <ContactUs />
         <CTASection />
