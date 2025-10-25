@@ -1,30 +1,38 @@
+name: Build and Deploy Static Site to Hostinger
+
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" ]   # Trigger on main branch
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
+      # 1️⃣ Checkout repository
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      # 2️⃣ Setup Node.js (older version for older React)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 16
 
+      # 3️⃣ Install dependencies and build
       - name: Install and build
         run: |
           npm install
-          npm run build
+          npm run build     # outputs /build folder
 
-      - name: Deploy built files to 'production' branch
+      # 4️⃣ Deploy built files to production branch
+      - name: Push build to production branch
         run: |
           cd build
           git init
           git config user.name "GitHub Actions"
           git config user.email "bhusaresanket08@gmail.com"
           git add .
-          git commit -m "Auto build and deploy"
-          git push --force git@github.com:Sank000/Adhane-Food-Solutions.git master:production
+          git commit -m "Auto deploy static site"
+          git branch -M production
+          git push --force "https://x-access-token:github_pat_...@github.com/Sank000/Adhane-Food-Solutionos.git"
