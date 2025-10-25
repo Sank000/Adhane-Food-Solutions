@@ -13,16 +13,17 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Node.js (for React)
+      # 2️⃣ Setup Node.js (updated for Vite and modern packages)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20   # ✅ Updated to Node 20
 
       # 3️⃣ Install dependencies and build
       - name: Install and build
         run: |
-          npm install
+          npm ci || npm install
+          chmod +x ./node_modules/.bin/vite   # ✅ ensure vite is executable
           npm run build     # outputs /build folder
 
       # 4️⃣ Deploy built files to production branch
